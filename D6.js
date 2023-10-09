@@ -22,7 +22,7 @@ console.log(newString("Epicode", "School"));
 
 console.log("Esercizio 2");
 
-function randomArr() {
+function generateRandomArr() {
   const newArr = [];
   for (let i = 0; i < 10; i++) {
     randomValue = Math.floor(Math.random() * 101);
@@ -31,8 +31,10 @@ function randomArr() {
   return newArr;
 }
 
-console.log(randomArr());
-console.log(randomArr());
+const randomArray = generateRandomArr();
+
+console.log(generateRandomArr());
+console.log(generateRandomArr());
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
@@ -54,13 +56,17 @@ console.log(evenArr);
 
 console.log("Esercizio 4");
 
-let summedArr = null;
+const sumArrNums = function (arrayN) {
+  let summedArr = 0;
 
-evenArr.forEach(function (num) {
-  summedArr += num;
-});
+  arrayN.forEach((num) => (summedArr += num));
 
-console.log(summedArr);
+  return summedArr;
+};
+
+console.log(sumArrNums(numbersArr));
+console.log(sumArrNums(evenArr));
+console.log(sumArrNums(randomArray));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
